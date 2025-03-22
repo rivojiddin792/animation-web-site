@@ -1,0 +1,155 @@
+body {
+    background-color: rgb(69, 0, 133);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.animated-text {
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+    animation-name: slide-down;
+    animation-duration: 2.5s;
+    margin-top: 80px;
+}
+
+p {
+    color: antiquewhite;
+}
+
+h2 {
+    color: orange;
+}
+
+@keyframes slide-down {
+    from {
+        top: -80px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0px;
+        opacity: 0,3;
+    }
+}
+
+.animated-heading h1 {
+    font-size: 50px;
+    animation-name: text-color;
+    animation-duration: 3s;
+}
+
+@keyframes text-color {
+    from {
+        color: chocolate;
+    }
+}
+
+.card-container {
+    display: flex;
+    margin-top: 150px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.float-box, .spin-card, .hover-effect {
+    background-color: purple;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.float-box {
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes floating {
+    0% {
+        top: -20px;
+    }
+
+    50% {
+        top: 20px;
+    }
+
+    100% {
+        top: -20px;
+    }
+}
+
+.spin-card {
+    animation-name: spinning;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.hover-effect:hover, .spin-card:hover, .float-box:hover {
+    box-shadow: rgba(0, 0, 0, 0.25);
+}
+
+.hover-effect:hover {
+    transform: scale(1.05, 1.05);
+    animation-name: tilt-effect;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes tilt-effect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+.colored-section {
+    background-color: rgb(153, 84, 217);
+    width: 100%;
+    height: 220px;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(73, 1, 141);
+    padding: 5px;
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .float-box, .spin-card, .hover-effect {
+        width: 80%;
+        height: auto;
+    }
+}
